@@ -20,7 +20,7 @@
             <a href="widget.html" class="nav-item nav-link"><i class="fa fa-shopping-cart me-2"></i>Transaksi</a>
             <a href="form.html" class="nav-item nav-link"><i class="fa fa-file-archive me-2"></i>Laporan Transaksi</a>
             <a href="table.html" class="nav-item nav-link"><i class="fa fa-camera"></i>Camera</a>
-            <a href="chart.html" class="nav-item nav-link"><i class="fa fa-users me-2"></i>Users</a>
+            <a href="{{ route('users') }}" class="nav-item nav-link"><i class="fa fa-users me-2"></i>Users</a>
            
         </div>
     </nav>

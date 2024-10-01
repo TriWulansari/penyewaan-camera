@@ -16,3 +16,7 @@ Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('login', [LoginController::class, 'proses'])->name('login.proses');
 
 Route::get('login/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('users', function () {
+    return view('users.index');
+})->name('users')->middleware('auth');
