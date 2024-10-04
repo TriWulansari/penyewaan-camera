@@ -11,9 +11,9 @@ class Camera extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = 'cameras';
+    protected $table = 'camera';
     protected $primaryKey = 'id';
-    protected $fillable = ['id' , 'user_id' , 'jenis' , 'kapasitas' , 'harga' , 'foto'];
+    protected $fillable = ['id' , 'jenis' , 'kapasitas' , 'harga' , 'foto'];
 
     public function user():BelongsTo
     {

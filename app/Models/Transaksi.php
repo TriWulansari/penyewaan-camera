@@ -11,9 +11,9 @@ class Transaksi extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = 'transaksis';
+    protected $table = 'transaksi';
     protected $primaryKey = 'id';   
-    protected $fillable = ['id', 'user_id', 'camera_id', 'nama', 'noponsel', 'alamat', 'lama', 'tgl_pesan', 'total', 'status'];
+    protected $fillable = ['id', 'camera_id', 'nama', 'noponsel', 'alamat', 'lama', 'tgl_pesan', 'total', 'status'];
 
     public function user(): BelongsTo
     {

@@ -12,9 +12,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cameras', function (Blueprint $table) {
+        Schema::create('camera', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class);
             $table->enum('jenis' , ['canon' , 'samsung' , 'sony']);
             $table->string('kapasitas')->nullable();
             $table->string('harga')->nullable();
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cameras');
+        Schema::dropIfExists('camera');
     }
 };

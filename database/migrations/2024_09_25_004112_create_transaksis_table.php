@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('transaksis', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(User::class);
             $table->foreignIdFor(Camera::class);
             $table->string('nama')->nullable();
             $table->string('noponsel')->nullable();

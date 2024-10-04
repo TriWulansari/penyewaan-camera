@@ -22,7 +22,8 @@ class UsersComponent extends Component
 
     public function create()
     {
-       $this->addPage = true;
+        $this->reset();
+        $this->addPage = true;
     }
 
     public function store()
@@ -57,6 +58,7 @@ class UsersComponent extends Component
 
     public function edit($id)
     {
+        $this->reset();
         $cari = User::find($id);
         $this->email = $cari->email;
         $this->password = $cari->password;
