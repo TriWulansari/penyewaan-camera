@@ -28,7 +28,7 @@
                             <th scope="row">{{ $loop->iteration }}</th>
                             <td>{{ $data->jenis}}</td>
                             <td>{{ $data->kapasitas}}</td>
-                            <td>{{ $data->harga}}</td>
+                            <td>@rupiah($data->harga)</td>
                             <td>
                                 <img src="{{ asset('/public/storage/camera/' . $data->foto) }}" style="width: 100px;" alt="{{$data->jenis}}">
                             </td>

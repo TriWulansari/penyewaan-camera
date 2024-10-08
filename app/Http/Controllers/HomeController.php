@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Camera;
+use App\Models\Transaksi;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('home');
+        $data['camera'] = Camera::count();
+        $data['user'] = User::count();
+        $data['transaksi'] = Transaksi::where('status', 'SELESAI')->sum('total');
+        return view('home', $data);
     }
 }
