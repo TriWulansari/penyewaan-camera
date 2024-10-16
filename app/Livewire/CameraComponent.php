@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Livewire;
 
 use App\Models\Camera;
@@ -10,8 +9,7 @@ use Livewire\WithPagination;
 
 class CameraComponent extends Component
 {
-    use WithFileUploads;
-    use WithPagination, WithoutUrlPagination, WithFileUploads;
+    use WithFileUploads, WithPagination, WithoutUrlPagination;
     protected $paginationTheme = 'bootstrap';
     public $addPage, $editPage = false;
     public $jenis,$kapasitas,$harga,$foto,$id;
@@ -68,7 +66,7 @@ class CameraComponent extends Component
         $this->jenis = $data->jenis;
         $this->kapasitas = $data->kapasitas;
         $this->harga = $data->harga;
-        $this->foto = $data->foto;
+        $this->foto = null; // Atur $this->foto ke null
     }
 
     public function update()
@@ -76,7 +74,7 @@ class CameraComponent extends Component
         $camera = Camera::find($this->id);
     
         // Jika foto baru diunggah
-        if ($this->foto) {
+        if ($this->foto instanceof \Illuminate\Http\UploadedFile) {
             // Simpan foto baru
             $filename = $this->foto->store('camera', 'public');
             $camera->update([

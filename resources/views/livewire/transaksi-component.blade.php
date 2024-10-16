@@ -28,7 +28,7 @@
                            </ul>
                            <div class="card-body">
                              <button wire:click="create({{ $data->id }},{{ $data->harga }})" 
-                                class="btn btn-outline-success card-link">Pilih Camera</button>
+                                class="btn btn-outline-warning card-link">Pilih Camera</button>
                            </div>
                        </div>
                     </div>

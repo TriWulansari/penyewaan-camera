@@ -38,7 +38,7 @@
                         <div class="form-text text-danger">{{ $message }}</div>
                     @enderror
                 </div>
-                <button type="button" wire:click="update({{$id}})" class="btn btn-primary">Simpan</button>
+                <button type="button" wire:click="update({{$id}})" class="btn btn-waring">Simpan</button>
             </form>
         </div>
         </div>

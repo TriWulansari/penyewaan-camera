@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #009CFF;
+    --warning: #ffc107;
     --light: #F3F6F9;
     --dark: #191C24;
 }
@@ -133,9 +133,9 @@
 
 .sidebar .navbar .navbar-nav .nav-link:hover,
 .sidebar .navbar .navbar-nav .nav-link.active {
-    color: var(--primary);
+    color: var(--warning);
     background: #FFFFFF;
-    border-color: var(--primary);
+    border-color: var(--warning);
 }
 
 .sidebar .navbar .navbar-nav .nav-link i {
@@ -176,13 +176,13 @@
 .content .navbar .navbar-nav .nav-link {
     margin-left: 25px;
     padding: 12px 0;
-    color: var(--dark);
+    color: var(--warning);
     outline: none;
 }
 
 .content .navbar .navbar-nav .nav-link:hover,
 .content .navbar .navbar-nav .nav-link.active {
-    color: var(--primary);
+    color: var(--warning);
 }
 
 .content .navbar .sidebar-toggler,

@@ -35,7 +35,7 @@
                     </tbody>
                 </table>
                 {{ $user->links() }}
-                <button class="btn btn-primary" wire:click="create">Tambah</button>
+                <button class="btn btn-warning" wire:click="create">Tambah</button>
                
             </div>
         </div>        

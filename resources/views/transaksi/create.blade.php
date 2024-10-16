@@ -43,7 +43,7 @@
                     Total :  {{ $total }}
                 </div>
                
-                <button type="button" wire:click="store" class="btn btn-primary">Simpan</button>
+                <button type="button" wire:click="store" class="btn btn-warning">Simpan</button>
             </form>
         </div>
         </div>
