@@ -1,5 +1,5 @@
 @extends('layout.template')
-@section('title', 'Transaksi - Rent Cam')
+@section('title', 'Sales-Transactions - Camera Sell')
 
 @section('content')
 @livewire('LihatTransaksi')

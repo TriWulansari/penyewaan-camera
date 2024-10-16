@@ -8,7 +8,7 @@
                     {{ session('success') }}
                   </div>
                 @endif
-                <h6 class="mb-4">Data Transaksi</h6>
+                <h6 class="mb-4">Data Penjualan</h6>
                 <table class="table">
                     <thead>
                         <tr>

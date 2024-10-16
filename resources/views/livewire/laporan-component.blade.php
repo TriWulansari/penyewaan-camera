@@ -8,7 +8,7 @@
                     {{ session('success') }}
                   </div>
                 @endif
-                <h6 class="mb-4">Data Laporan Transaksi</h6>
+                <h6 class="mb-4">Data Laporan Penjualan</h6>
                     <div class="row">
                         <div class="col-md-4">
                             <input type="date" class="form-control" wire:model="tanggal1" placeholder="Tanggal">

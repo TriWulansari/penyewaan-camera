@@ -3,10 +3,10 @@
     <div class="row g-4">
         <div class="col-sm-6 col-xl-4">
             <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                <i class="fa fa-dollar-sign fa-3x text-warning"></i>
+                <i class="fa fa-users fa-3x text-warning"></i>
                 <div class="ms-3">
-                    <p class="mb-2">Total Transaksi</p>
-                    <h6 class="mb-0">@rupiah($transaksi)</h6>
+                    <p class="mb-2">Users</p>
+                    <h6 class="mb-0">{{ $user }}</h6>
                 </div>
             </div>
         </div>
@@ -21,10 +21,10 @@
         </div>
         <div class="col-sm-6 col-xl-4">
             <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                <i class="fa fa-users fa-3x text-warning"></i>
+                <i class="fa fa-dollar-sign fa-3x text-warning"></i>
                 <div class="ms-3">
-                    <p class="mb-2">Users</p>
-                    <h6 class="mb-0">{{ $user }}</h6>
+                    <p class="mb-2">Total Sales</p>
+                    <h6 class="mb-0">@rupiah($transaksi)</h6>
                 </div>
             </div>
         </div>
