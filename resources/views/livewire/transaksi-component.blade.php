@@ -18,7 +18,7 @@
                     @foreach ($camera as $data)
                     <div class="col-md-4">
                        <div class="card" style="width: 18rem;">
-                           <img src="{{asset('/storage/camera/'.$data->foto)}}" style="height: 200px; width:200px" class="card-img-top" alt="...">
+                           <img src="{{asset('storage/'.$data->foto)}}" style="height: 200px; width:200px" class="card-img-top" alt="...">
                            <div class="card-body">
                              <h5 class="card-title">{{ $data->jenis }}</h5>
                            </div>
@@ -28,7 +28,7 @@
                            </ul>
                            <div class="card-body">
                              <button wire:click="create({{ $data->id }},{{ $data->harga }})" 
-                                class="btn btn-outline-success card-link">Pilih Camera</button>
+                                class="btn btn-outline-warning card-link">Pilih Camera</button>
                            </div>
                        </div>
                     </div>

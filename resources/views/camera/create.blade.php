@@ -32,12 +32,13 @@
                 </div>
                 <div class="mb-3">
                     <label for="foto" class="form-label">Foto</label>
-                    <input type="file" class="form-control" accept="camera/*" wire:model="foto" id="foto">
+                    <input type="file" class="form-control" accept="image/*" wire:model="foto" id="foto">
+                   
                     @error('foto')
                         <div class="form-text text-danger">{{ $message }}</div>
                     @enderror
                 </div>
-                <button type="button" wire:click="store" class="btn btn-primary">Simpan</button>
+                <button type="button" wire:click="store" class="btn btn-warning">Simpan</button>
             </form>
         </div>
         </div>

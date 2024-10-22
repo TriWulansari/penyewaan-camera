@@ -55,7 +55,7 @@
                     </tbody>
                 </table>
                 {{ $transaksi->links() }}
-               <button class="btn btn-primary" wire:click="exportpdf">Export PDF</button>
+               <button class="btn btn-warning" wire:click="exportpdf">Export PDF</button>
             </div>
         </div>        
     </div>

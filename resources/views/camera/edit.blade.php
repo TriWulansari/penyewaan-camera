@@ -33,12 +33,12 @@
                 <div class="mb-3">
                     <label for="foto" class="form-label">Foto</label>
                     <input type="file" class="form-control" wire:model="foto" id="foto">
-                    <img src="{{ asset('/storage/camera/' . $data->foto) }}" style="width: 100px;" alt="{{$data->jenis}}">
+                    <img src="{{ asset('storage/' . $data->foto) }}" style="width: 100px;" alt="{{$data->jenis}}">
                     @error('foto')
                         <div class="form-text text-danger">{{ $message }}</div>
                     @enderror
                 </div>
-                <button type="button" wire:click="update({{$id}})" class="btn btn-primary">Simpan</button>
+                <button type="button" wire:click="update({{$id}})" class="btn btn-warning">Simpan</button>
             </form>
         </div>
         </div>

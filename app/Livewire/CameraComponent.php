@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Camera;
+use Illuminate\Http\UploadedFile;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Livewire\WithoutUrlPagination;
@@ -32,7 +33,7 @@ class CameraComponent extends Component
             'jenis' => 'required',
             'kapasitas' => 'required',
             'harga' => 'required',
-            'foto' => 'required|image'
+            'foto' => 'required|image|max:2048'
         ],[
             'jenis.required' => 'jenis camera tidak boleh kosong !',
             'kapasitas.required' => 'kapasitas tidak boleh kosong  !',
@@ -46,9 +47,9 @@ class CameraComponent extends Component
             'jenis' => $this->jenis,
             'kapasitas' => $this->kapasitas,
             'harga' => $this->harga,
-            'foto' => $this->foto->hashName()
+            'foto' => $fillname
         ]);
-        session()->flash('succes', 'Berhasil simpan data !');
+        session()->flash('success', 'Berhasil simpan data !');
         $this->reset();
     }
 
@@ -56,7 +57,7 @@ class CameraComponent extends Component
     {
         $data = Camera::find($id);
         $data->delete();
-        session()->flash('succes', 'Berhasil hapus data !');
+        session()->flash('success', 'Berhasil hapus data !');
         $this->reset();
     }
 
@@ -75,15 +76,22 @@ class CameraComponent extends Component
     {
         $camera = Camera::find($this->id);
     
+        // Validasi input
+        $this->validate([
+            'jenis' => 'required|string',
+            'kapasitas' => 'required|string',
+            'harga' => 'required|numeric',
+            'foto' => 'nullable|image|max:2048', // Izinkan null untuk foto
+        ]);
+    
         // Jika foto baru diunggah
-        if ($this->foto) {
-            // Simpan foto baru
-            $filename = $this->foto->store('camera', 'public');
+        if ($this->foto instanceof UploadedFile) {
+            $fillname = $this->foto->store('camera', 'public');
             $camera->update([
                 'jenis' => $this->jenis,
                 'kapasitas' => $this->kapasitas,
                 'harga' => $this->harga,
-                'foto' => $this->foto->hashName() // Ganti dengan nama file baru
+                'foto' => $fillname // Ganti dengan nama file baru
             ]);
         } else {
             // Jika tidak ada foto baru, hanya perbarui atribut lainnya
@@ -94,7 +102,7 @@ class CameraComponent extends Component
             ]);
         }
     
-        session()->flash('succes', 'Berhasil update data !');
+        session()->flash('success', 'Berhasil update data !');
         $this->reset();
     }
 }
