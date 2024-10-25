@@ -1,4 +1,4 @@
-@extends('layout.template')
+@extends('layout.halaman')
 @section('title', 'Report - Camera_Sell')
 
 @section('content')
